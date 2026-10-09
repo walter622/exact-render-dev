@@ -226,7 +226,7 @@ function LogoRow({ reverse = false }: { reverse?: boolean }) {
     <div className="marquee-mask pause-on-hover overflow-hidden" tabIndex={0}>
       <div className={`flex w-max items-center gap-20 pr-20 ${reverse ? "animate-marquee-rev" : "animate-marquee"}`}>
         {list.map((p, i) => (
-          <img key={i} src={p.src} alt={i < partners.length ? p.name : ""} aria-hidden={i >= partners.length} loading="lazy" className="logo-white h-11 w-auto max-w-[180px] object-contain opacity-60 transition-all duration-300 hover:scale-105 hover:opacity-100" />
+          <img key={i} src={p.src} alt={i < partners.length ? p.name : ""} aria-hidden={i >= partners.length} loading="lazy" className={`logo-white ${"tall" in p && p.tall ? "h-16" : "h-11"} w-auto max-w-[180px] object-contain opacity-60 transition-all duration-300 hover:scale-105 hover:opacity-100`} />
         ))}
       </div>
     </div>

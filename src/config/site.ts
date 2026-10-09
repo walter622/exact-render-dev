@@ -36,9 +36,9 @@ export const fotos = {
 
 export const partners = [
   { name: "Pura Vida", src: "/logos/pura-vida.svg" },
-  { name: "Essential Nutrition", src: "/logos/essential-nutrition.png" },
+  { name: "Essential Nutrition", src: "/logos/essential-nutrition.png", tall: true },
   { name: "Pacco", src: "/logos/pacco.webp" },
-  { name: "Super Coffee", src: "/logos/super-coffee.png" },
+  { name: "Super Coffee", src: "/logos/super-coffee.png", tall: true },
   { name: "Optimum Nutrition", src: "/logos/optimum-nutrition.svg" },
   { name: "Bold", src: "/logos/bold.png" },
   { name: "True Source", src: "/logos/true-source.svg" },
