@@ -29,7 +29,7 @@ export function Hero() {
       <Leaf className="-left-10 top-24 w-28 rotate-[-30deg] opacity-80 blur-[3px] md:w-40" />
       <Leaf className="-right-6 bottom-6 w-24 rotate-[120deg] opacity-70 blur-[5px] md:w-36" />
       <div className={`${wrap} grid items-center gap-14 lg:grid-cols-[1.05fr_1fr]`}>
-        <Reveal>
+        <Reveal className="relative z-10">
           <h1 className="text-[2.6rem] font-semibold leading-[1.05] tracking-tight md:text-[4.5rem]">
             Cuidado que dá pra <em className="kw text-primary-glow">provar</em>.
           </h1>
@@ -43,7 +43,7 @@ export function Hero() {
             <li className="flex items-center gap-3"><IconBox>{Icon.hands}</IconBox>Atendimento por consultoras</li>
           </ul>
         </Reveal>
-        <Reveal delay={150} className="relative">
+        <Reveal delay={150} className="relative z-10">
           <div className="absolute -inset-4 rounded-[2rem] border border-line md:-inset-6" aria-hidden />
           <img src={fotos.hero} alt="Grãos e castanhas nos dispensers da Cerealli" width={1616} height={1080} fetchPriority="high" className="relative aspect-[5/6] w-full rounded-[1.75rem] object-cover" />
           <div className="absolute -bottom-5 left-6"><Tag /></div>
@@ -150,7 +150,7 @@ export function ParaQuem() {
   return (
     <section className={`grain glow-bl relative overflow-hidden ${section}`}>
       <Leaf className="-right-8 top-16 w-28 rotate-45 opacity-70 blur-[4px]" />
-      <div className={wrap}>
+      <div className={`${wrap} relative z-10`}>
         <Reveal><h2 className={`${h2} max-w-4xl`}>Para quem não abre mão de cuidar da saúde e não quer <em className="kw text-primary-glow">perder tempo</em> com isso</h2></Reveal>
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           {cards.map((c, i) => (
@@ -326,7 +326,7 @@ export function Lojas() {
         <div className="absolute inset-0 bg-background/85" />
         <Leaf className="-left-8 top-10 w-28 rotate-[-20deg] opacity-80 blur-[3px] md:w-36" />
         <Leaf className="-right-8 bottom-10 w-24 rotate-[150deg] opacity-70 blur-[5px] md:w-32" />
-        <div className={`${wrap} relative`}>
+        <div className={`${wrap} relative z-10`}>
           <Reveal className="mx-auto max-w-3xl text-center">
             <h2 className={h2}>Fale agora com uma consultora da Cerealli mais <em className="kw text-primary-glow">perto de você</em></h2>
             <p className="mt-5 text-lg text-muted-foreground">Toque na sua unidade e o WhatsApp abre direto com a equipe da loja.</p>
