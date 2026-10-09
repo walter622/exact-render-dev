@@ -30,8 +30,7 @@ export function Hero() {
       <Leaf className="-right-6 bottom-6 w-24 rotate-[120deg] opacity-70 blur-[5px] md:w-36" />
       <div className={`${wrap} grid items-center gap-14 lg:grid-cols-[1.05fr_1fr]`}>
         <Reveal>
-          <p className="eyebrow">Cerealli Natural Market</p>
-          <h1 className="mt-6 text-[2.6rem] font-semibold leading-[1.05] tracking-tight md:text-[4.5rem]">
+          <h1 className="text-[2.6rem] font-semibold leading-[1.05] tracking-tight md:text-[4.5rem]">
             Cuidado que dá pra <em className="kw text-primary-glow">provar</em>.
           </h1>
           <p className="mt-7 max-w-xl text-lg text-muted-foreground">
@@ -98,53 +97,33 @@ const steps = [
 ];
 
 function Step({ n, s }: { n: number; s: (typeof steps)[number] }) {
-  if (s.big)
-    return (
-      <Reveal className="rounded-3xl bg-ink p-8 text-primary-foreground md:p-12">
-        <div className="flex items-start justify-between">
-          <span className="font-serif text-2xl italic text-primary-glow">0{n}</span>
-          <IconBox className="h-7 w-7">{s.i}</IconBox>
-        </div>
-        <p className="mt-4 font-serif text-[6rem] font-bold italic leading-none text-primary-glow md:text-[9rem]">72h</p>
-        <p className="mt-4 max-w-md text-lg">{s.t}</p>
-      </Reveal>
-    );
   return (
-    <Reveal className="flex gap-6 border-t border-ink/15 py-7">
-      <span className="w-14 shrink-0 font-serif text-4xl font-bold italic leading-none text-primary">0{n}</span>
-      <div className="flex-1">
-        <IconBox className="mb-3 !text-primary">{s.i}</IconBox>
-        <p className="text-lg text-ink">{s.t}</p>
-      </div>
-    </Reveal>
+    <li className="h-full">
+      <Reveal className={`flex h-full items-start gap-5 border-t py-7 sm:gap-6 ${s.big ? "border-primary" : "border-ink/15"}`}>
+        <span className="w-12 shrink-0 font-serif text-4xl font-bold italic leading-none text-primary">{String(n).padStart(2, "0")}</span>
+        <div className="min-w-0 flex-1">
+          <IconBox className="mb-4 !text-primary">{s.i}</IconBox>
+          <p className="text-base leading-relaxed text-ink sm:text-lg">{s.t}</p>
+        </div>
+      </Reveal>
+    </li>
   );
 }
 
 export function Cuidado() {
-  const img = (src: string, alt: string) => (
-    <Reveal className="py-6"><img src={src} alt={alt} width={1200} height={900} loading="lazy" className="aspect-[4/3] w-full rounded-3xl object-cover" /></Reveal>
-  );
   return (
     <section className={`bg-cream text-ink ${section}`}>
       <div className={wrap}>
         <Reveal className="max-w-3xl">
-          <p className="eyebrow !text-primary">O cuidado que você não vê</p>
-          <h2 className={`${h2} mt-5`}>O que acontece com cada produto antes de ele chegar à sua <em className="kw text-primary">mesa</em></h2>
+          <h2 className={h2}>O que acontece com cada produto antes de ele chegar à sua <em className="kw text-primary">mesa</em></h2>
           <p className="mt-6 text-lg text-ink-soft">No granel, o produto vem da natureza, sem embalagem de fábrica para esconder nada. Por isso, a Cerealli criou um processo próprio de qualidade, que acompanha cada item do recebimento até o pote.</p>
         </Reveal>
-        <div className="mt-16 grid gap-x-16 lg:grid-cols-2">
-          <div>
-            {steps[0] && <Step n={1} s={steps[0]} />}{steps[1] && <Step n={2} s={steps[1]} />}
-            {steps[3] && <Step n={4} s={steps[3]} />}{steps[4] && <Step n={5} s={steps[4]} />}
-            {img(fotos.reposicao, "Consultora cuidando dos dispensers de granel da Cerealli")}
-          </div>
-          <div className="lg:pt-24">
-            {steps[2] && <Step n={3} s={steps[2]} />}
-            <div className="h-6" />
-            {steps[5] && <Step n={6} s={steps[5]} />}{steps[6] && <Step n={7} s={steps[6]} />}
-            {img(fotos.potes, "Potes de granel com identificação dos produtos na Cerealli")}
-            {steps[7] && <Step n={8} s={steps[7]} />}
-          </div>
+        <ol aria-label="Cuidados com cada produto" className="mt-12 grid gap-x-12 md:mt-16 md:grid-cols-2 lg:gap-x-20">
+          {steps.map((s, i) => <Step key={s.t} n={i + 1} s={s} />)}
+        </ol>
+        <div className="mt-8 grid gap-6 sm:grid-cols-2">
+          <Reveal><img src={fotos.reposicao} alt="Consultora cuidando dos dispensers de granel da Cerealli" width={1616} height={1080} loading="lazy" className="aspect-[3/2] w-full rounded-2xl object-cover" /></Reveal>
+          <Reveal><img src={fotos.potes} alt="Potes de granel com identificação dos produtos na Cerealli" width={1616} height={1080} loading="lazy" className="aspect-[3/2] w-full rounded-2xl object-cover" /></Reveal>
         </div>
         <Reveal className="mt-16 grid overflow-hidden rounded-[1.75rem] border border-border bg-card text-card-foreground md:grid-cols-2">
           <img src={fotos.consultora} alt="Consultora Cerealli orientando uma cliente junto ao granel" width={1616} height={1080} loading="lazy" className="h-full min-h-72 w-full object-cover" />
@@ -166,7 +145,7 @@ export function ParaQuem() {
   const cards = [
     { t: "Para quem treina", d: "Whey, creatina, pré-treino e snacks proteicos com reposição rápida, sem esperar dias pela entrega e sem dúvida sobre a procedência.", img: fotos.treina, alt: "Cliente escolhendo whey protein na Cerealli" },
     { t: "Para quem cuida da casa inteira", d: "Castanhas, granola, mel, lanche saudável das crianças e o suplemento da família, resolvidos numa única conversa.", img: fotos.familia, alt: "Cliente escolhendo produtos na área de refrigerados da Cerealli" },
-    { t: "Para quem investe em longevidade", d: "As marcas premium de suplementação e orientação séria para quem quer viver mais e melhor.", img: fotos.longevidade, alt: "" },
+    { t: "Para quem investe em longevidade", d: "As marcas premium de suplementação e orientação séria para quem quer viver mais e melhor.", img: fotos.longevidade, alt: "Mulher madura conferindo um suplemento em casa, imagem ilustrativa gerada por IA" },
   ];
   return (
     <section className={`grain glow-bl relative overflow-hidden ${section}`}>
@@ -311,7 +290,7 @@ export function Depoimentos() {
 
 export function ComoReceber() {
   const c = [
-    { i: Icon.moto, t: "Delivery", d: `Seu pedido entregue em casa, separado pelas nossas consultoras. ${placeholders.prazoArea}`, img: fotos.delivery, alt: "Sacola de compras entregue na porta de casa" },
+    { i: Icon.moto, t: "Delivery", d: `Seu pedido entregue em casa, separado pelas nossas consultoras. ${placeholders.prazoArea}`, img: fotos.delivery, alt: "Entrega de uma sacola de produtos na porta de casa, imagem ilustrativa gerada por IA" },
     { i: Icon.bag, t: "Retirada na loja", d: "Peça pelo WhatsApp e passe só para buscar.", img: fotos.retirada, alt: "Entrada da Cerealli com uma cliente e uma consultora" },
     { i: Icon.store, t: "Visita à loja", d: "Venha conhecer, provar o granel e conversar pessoalmente com as consultoras.", img: fotos.fachada, alt: "Fachada da Cerealli Natural Market" },
   ];
@@ -349,8 +328,7 @@ export function Lojas() {
         <Leaf className="-right-8 bottom-10 w-24 rotate-[150deg] opacity-70 blur-[5px] md:w-32" />
         <div className={`${wrap} relative`}>
           <Reveal className="mx-auto max-w-3xl text-center">
-            <p className="eyebrow">Encontre a unidade mais próxima:</p>
-            <h2 className={`${h2} mt-5`}>Fale agora com uma consultora da Cerealli mais <em className="kw text-primary-glow">perto de você</em></h2>
+            <h2 className={h2}>Fale agora com uma consultora da Cerealli mais <em className="kw text-primary-glow">perto de você</em></h2>
             <p className="mt-5 text-lg text-muted-foreground">Toque na sua unidade e o WhatsApp abre direto com a equipe da loja.</p>
           </Reveal>
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
