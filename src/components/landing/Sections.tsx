@@ -46,7 +46,7 @@ export function Hero() {
         </Reveal>
         <Reveal delay={150} className="relative">
           <div className="absolute -inset-4 rounded-[2rem] border border-line md:-inset-6" aria-hidden />
-          <img src={fotos.hero} alt="Mix de castanhas, amêndoas e nozes em tigela escura sobre pedra" width={1200} height={1440} fetchPriority="high" className="relative aspect-[5/6] w-full rounded-[1.75rem] object-cover" />
+          <img src={fotos.hero} alt="Grãos e castanhas nos dispensers da Cerealli" width={1616} height={1080} fetchPriority="high" className="relative aspect-[5/6] w-full rounded-[1.75rem] object-cover" />
           <div className="absolute -bottom-5 left-6"><Tag /></div>
         </Reveal>
       </div>
@@ -134,20 +134,20 @@ export function Cuidado() {
         </Reveal>
         <div className="mt-16 grid gap-x-16 lg:grid-cols-2">
           <div>
-            <Step n={1} s={steps[0]!} /><Step n={2} s={steps[1]!} />
-            {img(fotos.inspecao, "Mãos com luvas inspecionando castanhas-de-caju em bandeja de inox")}
-            <Step n={4} s={steps[3]!} /><Step n={5} s={steps[4]!} />
+            {steps[0] && <Step n={1} s={steps[0]} />}{steps[1] && <Step n={2} s={steps[1]} />}
+            {steps[3] && <Step n={4} s={steps[3]} />}{steps[4] && <Step n={5} s={steps[4]} />}
+            {img(fotos.reposicao, "Consultora cuidando dos dispensers de granel da Cerealli")}
           </div>
           <div className="lg:pt-24">
-            <Step n={3} s={steps[2]!} />
+            {steps[2] && <Step n={3} s={steps[2]} />}
             <div className="h-6" />
-            <Step n={6} s={steps[5]!} /><Step n={7} s={steps[6]!} />
-            {img(fotos.potes, "Potes de vidro com granola, aveia, sementes e frutas secas organizados na prateleira")}
-            <Step n={8} s={steps[7]!} />
+            {steps[5] && <Step n={6} s={steps[5]} />}{steps[6] && <Step n={7} s={steps[6]} />}
+            {img(fotos.potes, "Potes de granel com identificação dos produtos na Cerealli")}
+            {steps[7] && <Step n={8} s={steps[7]} />}
           </div>
         </div>
         <Reveal className="mt-16 grid overflow-hidden rounded-[1.75rem] border border-border bg-card text-card-foreground md:grid-cols-2">
-          <img src={fotos.consultora} alt="Consultora Cerealli atendendo cliente no balcão" width={1200} height={912} loading="lazy" className="h-full min-h-72 w-full object-cover" />
+          <img src={fotos.consultora} alt="Consultora Cerealli orientando uma cliente junto ao granel" width={1616} height={1080} loading="lazy" className="h-full min-h-72 w-full object-cover" />
           <div className="p-8 md:p-14">
             <h3 className="text-3xl font-semibold md:text-4xl">E no <em className="kw text-primary-glow">atendimento</em>:</h3>
             <ul className="mt-8 space-y-6 text-lg text-muted-foreground">
@@ -164,9 +164,9 @@ export function Cuidado() {
 
 export function ParaQuem() {
   const cards = [
-    { t: "Para quem treina", d: "Whey, creatina, pré-treino e snacks proteicos com reposição rápida, sem esperar dias pela entrega e sem dúvida sobre a procedência.", img: fotos.treina, alt: "Homem treinando com kettlebell ao ar livre no pôr do sol" },
-    { t: "Para quem cuida da casa inteira", d: "Castanhas, granola, mel, lanche saudável das crianças e o suplemento da família, resolvidos numa única conversa.", img: fotos.familia, alt: "Mãe e filha montando lancheira saudável com frutas e castanhas" },
-    { t: "Para quem investe em longevidade", d: "As marcas premium de suplementação e orientação séria para quem quer viver mais e melhor.", img: fotos.longevidade, alt: "Casal maduro caminhando em trilha na floresta" },
+    { t: "Para quem treina", d: "Whey, creatina, pré-treino e snacks proteicos com reposição rápida, sem esperar dias pela entrega e sem dúvida sobre a procedência.", img: fotos.treina, alt: "Cliente escolhendo whey protein na Cerealli" },
+    { t: "Para quem cuida da casa inteira", d: "Castanhas, granola, mel, lanche saudável das crianças e o suplemento da família, resolvidos numa única conversa.", img: fotos.familia, alt: "Cliente escolhendo produtos na área de refrigerados da Cerealli" },
+    { t: "Para quem investe em longevidade", d: "As marcas premium de suplementação e orientação séria para quem quer viver mais e melhor.", img: fotos.longevidade, alt: "" },
   ];
   return (
     <section className={`grain glow-bl relative overflow-hidden ${section}`}>
@@ -176,7 +176,7 @@ export function ParaQuem() {
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           {cards.map((c, i) => (
             <Reveal key={c.t} delay={i * 100} className="group overflow-hidden rounded-3xl border border-border bg-card transition-all duration-300 hover:-translate-y-1.5 hover:border-primary">
-              <div className="overflow-hidden"><img src={c.img} alt={c.alt} width={960} height={1200} loading="lazy" className="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+              {c.img ? <div className="overflow-hidden"><img src={c.img} alt={c.alt} width={1616} height={1080} loading="lazy" className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105" /></div> : <div className="flex aspect-[4/3] items-center justify-center border-b border-border bg-primary/10"><IconBox className="h-24 w-24">{Icon.heart}</IconBox></div>}
               <div className="p-7">
                 <h3 className="text-xl font-semibold">{c.t}</h3>
                 <p className="mt-3 text-muted-foreground">{c.d}</p>
@@ -208,10 +208,10 @@ export function Linhas() {
       <div className={wrap}>
         <Reveal><h2 className={`${h2} max-w-3xl`}>Tudo o que a sua rotina saudável pede, com a mesma <em className="kw text-primary-glow">curadoria</em></h2></Reveal>
         <div className="mt-14 grid gap-6 lg:grid-cols-[1.3fr_1fr]">
-          <Reveal className="h-full"><Card main title="GRANEL" img={fotos.loja} alt="Parede de dispensers e potes de granel na loja" d="O coração da Cerealli. Você leva a quantidade que quiser e pode provar antes." items={["Castanhas e oleaginosas", "Frutas desidratadas", "Cereais, grãos e farinhas", "Granolas e mix", "Chás"]} /></Reveal>
+          <Reveal className="h-full"><Card main title="GRANEL" img={fotos.granel} alt="Parede de dispensers e potes de granel na loja" d="O coração da Cerealli. Você leva a quantidade que quiser e pode provar antes." items={["Castanhas e oleaginosas", "Frutas desidratadas", "Cereais, grãos e farinhas", "Granolas e mix", "Chás"]} /></Reveal>
           <div className="grid gap-6">
-            <Reveal delay={100}><Card title="SUPLEMENTAÇÃO" img={fotos.suplementacao} alt="Dosador com whey protein e creatina sobre pedra escura" d="As marcas que são referência no mercado, com orientação de quem entende." items={["Whey protein", "Creatina", "Ômegas", "Vitaminas e minerais", "Pré-treino", "Géis, repositores e isotônicos para endurance"]} /></Reveal>
-            <Reveal delay={200}><Card title="MERCADO E REFRIGERADOS" img={fotos.mercado} alt="Snacks saudáveis, barras de proteína e chocolate amargo sobre madeira" d="Para completar a despensa sem precisar de outra parada." items={["Sem glúten, sem lactose e sem açúcar", "Low carb e diet", "Opções veganas", "Snacks saudáveis para as crianças", "Doces fit"]} /></Reveal>
+            <Reveal delay={100}><Card title="SUPLEMENTAÇÃO" img={fotos.suplementacao} alt="Suplementos e produtos saudáveis nas prateleiras da Cerealli" d="As marcas que são referência no mercado, com orientação de quem entende." items={["Whey protein", "Creatina", "Ômegas", "Vitaminas e minerais", "Pré-treino", "Géis, repositores e isotônicos para endurance"]} /></Reveal>
+            <Reveal delay={200}><Card title="MERCADO E REFRIGERADOS" img={fotos.mercado} alt="Consultora selecionando uma bebida proteica na geladeira da Cerealli" d="Para completar a despensa sem precisar de outra parada." items={["Sem glúten, sem lactose e sem açúcar", "Low carb e diet", "Opções veganas", "Snacks saudáveis para as crianças", "Doces fit"]} /></Reveal>
           </div>
         </div>
       </div>
@@ -280,7 +280,7 @@ export function ComoFunciona() {
         </div>
         <Reveal delay={150} className="relative">
           <div className="absolute -inset-4 rounded-[2rem] border border-line" aria-hidden />
-          <img src={fotos.celular} alt="Mão segurando celular com conversa aberta, cozinha ao fundo" width={1008} height={1200} loading="lazy" className="relative aspect-[5/6] w-full rounded-[1.75rem] object-cover" />
+          <img src={fotos.celular} alt="Consultora Cerealli separando granel em uma embalagem para o pedido" width={1616} height={1080} loading="lazy" className="relative aspect-[4/3] w-full rounded-[1.75rem] object-cover" />
         </Reveal>
       </div>
     </section>
@@ -298,7 +298,7 @@ export function Depoimentos() {
               <span className="font-serif text-7xl font-bold italic leading-none text-primary" aria-hidden>“</span>
               <p className="mt-2 flex-1 text-lg">{t.text}</p>
               <div className="mt-8 flex items-center gap-4">
-                <img src={t.avatar} alt={`Foto de ${t.name}`} width={56} height={56} loading="lazy" className="h-14 w-14 rounded-full object-cover" />
+                {t.avatar && <img src={t.avatar} alt={`Foto de ${t.name}`} width={56} height={56} loading="lazy" className="h-14 w-14 rounded-full object-cover" />}
                 <div><p className="font-semibold">{t.name}</p><p className="text-sm text-ink-soft">cliente da unidade {t.store}</p></div>
               </div>
             </Reveal>
@@ -312,8 +312,8 @@ export function Depoimentos() {
 export function ComoReceber() {
   const c = [
     { i: Icon.moto, t: "Delivery", d: `Seu pedido entregue em casa, separado pelas nossas consultoras. ${placeholders.prazoArea}`, img: fotos.delivery, alt: "Sacola de compras entregue na porta de casa" },
-    { i: Icon.bag, t: "Retirada na loja", d: "Peça pelo WhatsApp e passe só para buscar.", img: fotos.consultora, alt: "Balcão de atendimento da loja Cerealli" },
-    { i: Icon.store, t: "Visita à loja", d: "Venha conhecer, provar o granel e conversar pessoalmente com as consultoras.", img: fotos.loja, alt: "Interior da loja de granel Cerealli" },
+    { i: Icon.bag, t: "Retirada na loja", d: "Peça pelo WhatsApp e passe só para buscar.", img: fotos.retirada, alt: "Entrada da Cerealli com uma cliente e uma consultora" },
+    { i: Icon.store, t: "Visita à loja", d: "Venha conhecer, provar o granel e conversar pessoalmente com as consultoras.", img: fotos.fachada, alt: "Fachada da Cerealli Natural Market" },
   ];
   return (
     <section className={`grain ${section}`}>
@@ -322,7 +322,7 @@ export function ComoReceber() {
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           {c.map((x, i) => (
             <Reveal key={x.t} delay={i * 100} className="group overflow-hidden rounded-3xl border border-border bg-card transition-all duration-300 hover:-translate-y-1.5 hover:border-primary">
-              <div className="overflow-hidden"><img src={x.img} alt={x.alt} width={1200} height={900} loading="lazy" className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+              {x.img ? <div className="overflow-hidden"><img src={x.img} alt={x.alt} width={1920} height={1281} loading="lazy" className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105" /></div> : <div className="flex aspect-[4/3] items-center justify-center border-b border-border bg-primary/10"><IconBox className="h-24 w-24">{x.i}</IconBox></div>}
               <div className="p-7">
                 <IconBox className="h-8 w-8">{x.i}</IconBox>
                 <h3 className="mt-4 text-xl font-semibold">{x.t}</h3>
@@ -344,7 +344,6 @@ export function Lojas() {
   return (
     <section id="lojas" className="scroll-mt-20 bg-primary p-3 md:p-5">
       <div className="relative overflow-hidden rounded-[2rem] py-20 md:py-28">
-        <img src={fotos.loja} alt="" aria-hidden loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-background/85" />
         <Leaf className="-left-8 top-10 w-28 rotate-[-20deg] opacity-80 blur-[3px] md:w-36" />
         <Leaf className="-right-8 bottom-10 w-24 rotate-[150deg] opacity-70 blur-[5px] md:w-32" />

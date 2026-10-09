@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Landing page editable content (WhatsApp numbers, @s, photos, placeholders, Pixel ID) lives in src/config/site.ts — why: owner edits one file without touching layout.
+- Uploaded photography is served through imported CDN asset pointers referenced in the site configuration; unsupported photo slots render without a photo — why: preserve source authenticity and avoid reusing photos or implying unrelated scenes.
