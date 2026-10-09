@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Landing page editable content (WhatsApp numbers, @s, photos, placeholders, Pixel ID) lives in src/config/site.ts — why: owner edits one file without touching layout.

@@ -1,24 +1,33 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Header, Hero, Video, Cuidado, ParaQuem, Linhas, Parceiros, ComoFunciona, Depoimentos, ComoReceber, Lojas, Faq, Footer, FloatingWhats } from "@/components/landing/Sections";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const title = "Cerealli Natural Market | Granel, suplementação e alimentação saudável";
+const description = "Granel, suplementação e alimentação saudável com rigor de cozinha profissional. Fale com uma consultora Cerealli pelo WhatsApp e receba em casa em São Paulo.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { property: "og:locale", content: "pt_BR" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <Header />
+      <main>
+        <Hero /><Video /><Cuidado /><ParaQuem /><Linhas /><Parceiros /><ComoFunciona /><Depoimentos /><ComoReceber /><Lojas /><Faq />
+      </main>
+      <Footer />
+      <FloatingWhats />
+    </>
   );
 }
