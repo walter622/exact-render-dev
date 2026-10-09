@@ -10,4 +10,5 @@
 <!-- LOVABLE:END -->
 
 - Landing page editable content (WhatsApp numbers, @s, photos, placeholders, Pixel ID) lives in src/config/site.ts — why: owner edits one file without touching layout.
-- Uploaded photography is served through imported CDN asset pointers referenced in the site configuration; unsupported photo slots render without a photo — why: preserve source authenticity and avoid reusing photos or implying unrelated scenes.
+- Uploaded photography is served through CDN asset pointers and generated illustrative images through bundled imports, all referenced in the site configuration; testimonial portraits remain empty until supplied — why: preserve uploaded subjects and avoid depicting fictional people as actual customers.
+- Render product-care steps from one ordered list with row-major desktop order and sequential mobile order — why: maintain an unambiguous progression and consistent sizing.

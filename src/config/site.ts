@@ -11,6 +11,8 @@ import paredeGranel from "@/assets/photos/A7R00452.jpg.asset.json";
 import separacaoPedido from "@/assets/photos/A7R00614.jpg.asset.json";
 import retirada from "@/assets/photos/A7R04012.jpg.asset.json";
 import fachada from "@/assets/photos/A7R04009.jpg.asset.json";
+import longevidadeRealista from "@/assets/longevidade-realista.jpg";
+import deliveryRealista from "@/assets/delivery-realista.jpg";
 
 // Edite aqui todos os textos variáveis, números de WhatsApp, @ e fotos.
 export const META_PIXEL_ID = "SEU_PIXEL_ID";
@@ -40,11 +42,11 @@ export const fotos = {
   consultora: atendimento.url,
   treina: clienteSuplementos.url,
   familia: clienteRefrigerados.url,
-  longevidade: "",
+  longevidade: longevidadeRealista,
   granel: paredeGranel.url,
   suplementacao: suplementos.url,
   mercado: refrigerados.url,
-  delivery: "",
+  delivery: deliveryRealista,
   celular: separacaoPedido.url,
   retirada: retirada.url,
   fachada: fachada.url,
