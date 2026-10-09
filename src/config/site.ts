@@ -1,3 +1,17 @@
+import granelDetalhe from "@/assets/photos/A7R00447.jpg.asset.json";
+import lojaInterior from "@/assets/photos/A7R00466.jpg.asset.json";
+import reposicao from "@/assets/photos/A7R00488.jpg.asset.json";
+import potesGranel from "@/assets/photos/A7R00446.jpg.asset.json";
+import atendimento from "@/assets/photos/A7R00606.jpg.asset.json";
+import clienteSuplementos from "@/assets/photos/A7R00550.jpg.asset.json";
+import clienteRefrigerados from "@/assets/photos/A7R00507.jpg.asset.json";
+import suplementos from "@/assets/photos/A7R00456.jpg.asset.json";
+import refrigerados from "@/assets/photos/A7R00480.jpg.asset.json";
+import paredeGranel from "@/assets/photos/A7R00452.jpg.asset.json";
+import separacaoPedido from "@/assets/photos/A7R00614.jpg.asset.json";
+import retirada from "@/assets/photos/A7R04012.jpg.asset.json";
+import fachada from "@/assets/photos/A7R04009.jpg.asset.json";
+
 // Edite aqui todos os textos variáveis, números de WhatsApp, @ e fotos.
 export const META_PIXEL_ID = "SEU_PIXEL_ID";
 export const WHATSAPP_MESSAGE = "Olá! Vim pelo site e quero fazer um pedido";
@@ -19,18 +33,21 @@ export const placeholders = {
 };
 
 export const fotos = {
-  hero: "/fotos/hero-castanhas.webp",
-  loja: "/fotos/loja-interior.webp",
-  inspecao: "/fotos/inspecao-castanhas.webp",
-  potes: "/fotos/potes-granel.webp",
-  consultora: "/fotos/consultora-atendimento.webp",
-  treina: "/fotos/para-quem-treina.webp",
-  familia: "/fotos/para-familia.webp",
-  longevidade: "/fotos/para-longevidade.webp",
-  suplementacao: "/fotos/suplementacao.webp",
-  mercado: "/fotos/mercado-snacks.webp",
-  delivery: "/fotos/delivery-porta.webp",
-  celular: "/fotos/pedido-celular.webp",
+  hero: granelDetalhe.url,
+  loja: lojaInterior.url,
+  reposicao: reposicao.url,
+  potes: potesGranel.url,
+  consultora: atendimento.url,
+  treina: clienteSuplementos.url,
+  familia: clienteRefrigerados.url,
+  longevidade: "",
+  granel: paredeGranel.url,
+  suplementacao: suplementos.url,
+  mercado: refrigerados.url,
+  delivery: "",
+  celular: separacaoPedido.url,
+  retirada: retirada.url,
+  fachada: fachada.url,
   folha: "/fotos/folha.webp",
 };
 
@@ -45,9 +62,9 @@ export const partners = [
 ];
 
 export const testimonials = [
-  { text: "[depoimento]", name: "[nome]", store: "[loja]", avatar: fotos.consultora },
-  { text: "[depoimento]", name: "[nome]", store: "[loja]", avatar: fotos.familia },
-  { text: "[depoimento]", name: "[nome]", store: "[loja]", avatar: fotos.longevidade },
+  { text: "[depoimento]", name: "[nome]", store: "[loja]", avatar: "" },
+  { text: "[depoimento]", name: "[nome]", store: "[loja]", avatar: "" },
+  { text: "[depoimento]", name: "[nome]", store: "[loja]", avatar: "" },
 ];
 
 export const waLink = (n: string) => `https://wa.me/${n}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
