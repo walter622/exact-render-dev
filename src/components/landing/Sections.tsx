@@ -367,7 +367,7 @@ export function Lojas() {
                   onClick={() => trackContact(s.id)}
                   className="mt-7 inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full bg-primary px-5 font-semibold text-primary-foreground transition-all hover:scale-[1.03] hover:bg-primary-glow"
                 >
-                  <span className="h-5 w-5" aria-hidden>{Icon.wa}</span>Chamar no WhatsApp
+                  <span className="h-5 w-5 [&>svg]:h-full [&>svg]:w-full" aria-hidden>{Icon.wa}</span>Chamar no WhatsApp
                 </a>
               </Reveal>
             ))}
@@ -423,7 +423,7 @@ export function Footer() {
           ))}
         </nav>
         <p className="mt-12 text-4xl font-semibold md:text-5xl">Cuidado que dá pra <em className="kw text-primary-glow">provar</em>.</p>
-        <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" aria-label="Instagram da Cerealli" className="mt-10 flex h-12 w-12 items-center justify-center rounded-full border border-border text-primary-glow transition-colors hover:border-primary"><span className="h-6 w-6">{Icon.insta}</span></a>
+        <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" aria-label="Instagram da Cerealli" className="mt-10 flex h-12 w-12 items-center justify-center rounded-full border border-border text-primary-glow transition-colors hover:border-primary"><span className="h-6 w-6 [&>svg]:h-full [&>svg]:w-full">{Icon.insta}</span></a>
         <p className="mt-10 text-sm text-muted-foreground">© 2026 – Todos os direitos reservados.</p>
       </div>
     </footer>
@@ -433,7 +433,7 @@ export function Footer() {
 export function FloatingWhats() {
   return (
     <a href="#lojas" onClick={goToStores} aria-label="Falar no WhatsApp — escolher loja" className="fixed bottom-5 right-5 z-50 flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-[0_12px_30px_-8px_var(--primary)] transition-transform hover:scale-105 md:hidden">
-      <span className="h-8 w-8">{Icon.wa}</span>
+      <span className="h-8 w-8 [&>svg]:h-full [&>svg]:w-full">{Icon.wa}</span>
     </a>
   );
 }

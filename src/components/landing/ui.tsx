@@ -67,5 +67,5 @@ export const Icon = {
 };
 
 export function IconBox({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return <span className={`inline-flex h-6 w-6 shrink-0 text-primary-glow ${className}`} aria-hidden>{children}</span>;
+  return <span className={`inline-flex h-6 w-6 shrink-0 text-primary-glow [&>svg]:h-full [&>svg]:w-full ${className}`} aria-hidden>{children}</span>;
 }
