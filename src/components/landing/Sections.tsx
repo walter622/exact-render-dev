@@ -195,7 +195,6 @@ export function Linhas() {
       <img src={img} alt={alt} width={1200} height={1200} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/10" />
       <div className="relative p-7 md:p-10">
-        {main && <span className="mb-5 inline-block rounded-full bg-primary px-4 py-1.5 text-xs font-semibold tracking-[0.2em] text-primary-foreground">PROTAGONISTA</span>}
         <h3 className={`font-semibold tracking-[0.12em] ${main ? "text-4xl md:text-5xl" : "text-2xl"}`}>{title}</h3>
         <p className="mt-3 max-w-md text-foreground/90">{d}</p>
         <ul className="mt-5 flex flex-wrap gap-2">
