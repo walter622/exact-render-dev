@@ -134,16 +134,16 @@ export function Cuidado() {
         </Reveal>
         <div className="mt-16 grid gap-x-16 lg:grid-cols-2">
           <div>
-            <Step n={1} s={steps[0]} /><Step n={2} s={steps[1]} />
+            <Step n={1} s={steps[0]!} /><Step n={2} s={steps[1]!} />
             {img(fotos.inspecao, "Mãos com luvas inspecionando castanhas-de-caju em bandeja de inox")}
-            <Step n={4} s={steps[3]} /><Step n={5} s={steps[4]} />
+            <Step n={4} s={steps[3]!} /><Step n={5} s={steps[4]!} />
           </div>
           <div className="lg:pt-24">
-            <Step n={3} s={steps[2]} />
+            <Step n={3} s={steps[2]!} />
             <div className="h-6" />
-            <Step n={6} s={steps[5]} /><Step n={7} s={steps[6]} />
+            <Step n={6} s={steps[5]!} /><Step n={7} s={steps[6]!} />
             {img(fotos.potes, "Potes de vidro com granola, aveia, sementes e frutas secas organizados na prateleira")}
-            <Step n={8} s={steps[7]} />
+            <Step n={8} s={steps[7]!} />
           </div>
         </div>
         <Reveal className="mt-16 grid overflow-hidden rounded-[1.75rem] border border-border bg-card text-card-foreground md:grid-cols-2">
