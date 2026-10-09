@@ -43,7 +43,7 @@ export function Hero() {
             <li className="flex items-center gap-3"><IconBox>{Icon.hands}</IconBox>Atendimento por consultoras</li>
           </ul>
         </Reveal>
-        <Reveal delay={150} className="relative">
+        <Reveal delay={150} className="relative z-10">
           <div className="absolute -inset-4 rounded-[2rem] border border-line md:-inset-6" aria-hidden />
           <img src={fotos.hero} alt="Grãos e castanhas nos dispensers da Cerealli" width={1616} height={1080} fetchPriority="high" className="relative aspect-[5/6] w-full rounded-[1.75rem] object-cover" />
           <div className="absolute -bottom-5 left-6"><Tag /></div>
