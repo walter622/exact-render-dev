@@ -16,7 +16,7 @@ export function Header() {
   return (
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? "border-b border-border bg-background/80 backdrop-blur-xl" : ""}`}>
       <div className={`${wrap} flex h-[72px] items-center justify-between`}>
-        <a href="#topo" aria-label="Cerealli — início"><img src="/logos/cerealli.png" alt="Cerealli" width={473} height={115} className="logo-white h-7 w-auto md:h-8" /></a>
+        <a href="#topo" aria-label="Cerealli — início"><img src="/logos/cerealli-branco-folha-verde.png" alt="Cerealli" width={473} height={115} className="h-7 w-auto md:h-8" /></a>
         <a href="#lojas" onClick={goToStores} className="inline-flex min-h-12 items-center rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground transition-all hover:scale-[1.03] hover:bg-primary-glow">Fazer pedido</a>
       </div>
     </header>
@@ -261,6 +261,28 @@ export function ComoFunciona() {
           <div className="absolute -inset-4 rounded-[2rem] border border-line" aria-hidden />
           <img src={fotos.celular} alt="Consultora Cerealli separando granel em uma embalagem para o pedido" width={1616} height={1080} loading="lazy" className="relative aspect-[4/3] w-full rounded-[1.75rem] object-cover" />
         </Reveal>
+      </div>
+    </section>
+  );
+}
+
+export function Clube() {
+  return (
+    <section className={`grain relative overflow-hidden ${section}`}>
+      <Leaf className="-right-8 top-10 w-24 rotate-[100deg] opacity-60 blur-[4px] md:w-32" />
+      <div className={`${wrap} flex flex-col items-center text-center`}>
+        <Reveal><h2 className={`${h2} max-w-3xl`}>Faça parte do <em className="kw text-primary-glow">Clube Cerealli</em></h2></Reveal>
+        <Reveal delay={100}>
+          <p className="mt-7 max-w-2xl text-lg text-muted-foreground">
+            Quem é do Clube tem descontos exclusivos e benefícios a cada compra. O cadastro é rápido: a atendente faz pelo WhatsApp, com o seu CPF, e te envia o link do aplicativo.
+          </p>
+        </Reveal>
+        <Reveal delay={200}>
+          <span className="mt-10 inline-flex items-center gap-3 rounded-full border border-primary bg-primary/10 px-6 py-3 text-sm font-semibold text-primary-glow">
+            <IconBox>{Icon.tag}</IconBox>Descontos exclusivos para quem é do Clube
+          </span>
+        </Reveal>
+        <Reveal delay={300}><Cta className="mt-10">Quero entrar no Clube</Cta></Reveal>
       </div>
     </section>
   );
