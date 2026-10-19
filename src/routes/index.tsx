@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Header, Hero, Video, Cuidado, ParaQuem, Linhas, Parceiros, ComoFunciona, Clube, Depoimentos, ComoReceber, Lojas, Faq, Footer, FloatingWhats } from "@/components/landing/Sections";
 
 const title = "Cerealli Natural Market | Granel, suplementação e alimentação saudável";
-const description = "Granel, suplementação e alimentação saudável com rigor de cozinha profissional. Fale com uma consultora Cerealli pelo WhatsApp e receba em casa em São Paulo.";
+const description = "Granel, suplementação e alimentação saudável selecionados com critério. Fale com uma atendente Cerealli pelo WhatsApp e receba em casa em São Paulo.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
