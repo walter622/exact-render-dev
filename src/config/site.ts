@@ -29,7 +29,6 @@ export const stores = [
 
 export const placeholders = {
   prazoArea: "[prazo e área de entrega]",
-  pagamento: "[formas de pagamento]",
   areaPorLoja: "[área de entrega por loja]",
   prazo: "No mesmo dia, dentro da área de entrega de cada loja.",
 };
