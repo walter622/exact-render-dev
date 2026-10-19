@@ -38,7 +38,7 @@ export function Leaf({ className = "", size = 160 }: { className?: string; size?
 export function Tag({ dark = false }: { dark?: boolean }) {
   return (
     <span className={`inline-flex items-center gap-3 rounded-2xl px-5 py-3 ${dark ? "bg-background" : "bg-primary"}`}>
-      <img src="/logos/cerealli.png" alt="Cerealli" width={473} height={115} className="logo-white h-7 w-auto" />
+      <img src="/logos/cerealli-branco-folha-verde.png" alt="Cerealli" width={473} height={115} className="h-7 w-auto" />
       <span className="text-sm font-medium tracking-wide text-primary-foreground">natural market</span>
     </span>
   );
