@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import type React from "react";
 import { fotos, partners, stores, testimonials, placeholders, waLink, trackContact, INSTAGRAM_URL, VIDEO_EMBED_URL } from "@/config/site";
 import { Cta, Reveal, Leaf, Tag, Icon, IconBox, goToStores } from "./ui";
 
@@ -86,15 +87,11 @@ export function Video() {
 }
 
 const steps = [
-  { i: Icon.eye, t: "Caixa de inspeção no recebimento: cheiro, sabor, crocância, tamanho e pureza avaliados um a um" },
-  { i: Icon.ret, t: "Produto fora do padrão volta para o fornecedor" },
-  { i: Icon.snow, t: "72 horas de congelamento para cereais, castanhas e derivados antes de entrar no estoque", big: true },
-  { i: Icon.thermo, t: "Estoque climatizado para preservar a qualidade" },
-  { i: Icon.jar, t: "Potes menores de propósito, para reposição mais frequente e produto sempre fresco" },
-  { i: Icon.check, t: "Nova inspeção a cada reposição" },
-  { i: Icon.clip, t: "Conferência de todos os potes, todos os dias, antes de a loja abrir" },
-  { i: Icon.doc, t: "Data de embalo, data de reposição, lote e fornecedor registrados em cada pote" },
-];
+  { i: Icon.ret, t: "Só fica o que está no nosso padrão. Produto que não alcança a qualidade Cerealli volta para o fornecedor." },
+  { i: Icon.snow, t: "Cereais e castanhas passam 72 horas no congelamento antes de chegar à loja, um cuidado a mais para você levar o produto íntegro para casa." },
+  { i: Icon.thermo, t: "Nosso estoque é climatizado, na temperatura certa para manter o sabor e a crocância de cada produto." },
+  { i: Icon.jar, t: "Potes menores, para o produto estar sempre fresco. E cada pote traz data, lote e fornecedor, para você saber exatamente o que está levando." },
+] as { i: React.ReactNode; t: string; big?: boolean }[];
 
 function Step({ n, s }: { n: number; s: (typeof steps)[number] }) {
   return (
@@ -288,23 +285,33 @@ export function Clube() {
   );
 }
 
+function TestimonialCarousel() {
+  const ref = useRef<HTMLDivElement>(null);
+  const go = (d: number) => { const el = ref.current; if (el) el.scrollBy({ left: d * el.clientWidth, behavior: "smooth" }); };
+  const arrow = "hidden h-12 w-12 shrink-0 items-center justify-center rounded-full border border-ink/15 text-2xl transition-colors hover:border-primary hover:text-primary md:flex";
+  return (
+    <div className="mt-14 flex items-center gap-4">
+      <button type="button" aria-label="Depoimentos anteriores" onClick={() => go(-1)} className={arrow}>‹</button>
+      <div ref={ref} className="flex flex-1 snap-x snap-mandatory gap-6 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        {testimonials.map((t, i) => (
+          <article key={i} className="flex w-full shrink-0 snap-start flex-col rounded-3xl border border-ink/10 bg-background/0 p-8 transition-colors duration-300 hover:border-primary md:w-[calc((100%-3rem)/3)]">
+            <div className="flex gap-1 text-xl text-[#FBBC04]" aria-label="5 estrelas">{"★★★★★"}</div>
+            <p className="mt-5 flex-1 text-lg">“{t.text}”</p>
+            <div className="mt-8"><p className="font-semibold">{t.name}</p><p className="text-sm text-ink-soft">Cliente da unidade {t.store}</p></div>
+          </article>
+        ))}
+      </div>
+      <button type="button" aria-label="Próximos depoimentos" onClick={() => go(1)} className={arrow}>›</button>
+    </div>
+  );
+}
+
 export function Depoimentos() {
   return (
     <section className={`bg-cream text-ink ${section}`}>
       <div className={wrap}>
         <Reveal><h2 className={`${h2} text-center`}>O que dizem os <em className="kw text-primary">clientes</em> Cerealli</h2></Reveal>
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
-          {testimonials.map((t, i) => (
-            <Reveal key={i} delay={i * 100} className="flex flex-col rounded-3xl border border-ink/10 bg-background/0 p-8 transition-all duration-300 hover:-translate-y-1 hover:border-primary">
-              <span className="font-serif text-7xl font-bold italic leading-none text-primary" aria-hidden>“</span>
-              <p className="mt-2 flex-1 text-lg">{t.text}</p>
-              <div className="mt-8 flex items-center gap-4">
-                {t.avatar && <img src={t.avatar} alt={`Foto de ${t.name}`} width={56} height={56} loading="lazy" className="h-14 w-14 rounded-full object-cover" />}
-                <div><p className="font-semibold">{t.name}</p><p className="text-sm text-ink-soft">cliente da unidade {t.store}</p></div>
-              </div>
-            </Reveal>
-          ))}
-        </div>
+        <TestimonialCarousel />
       </div>
     </section>
   );

@@ -31,7 +31,7 @@ export const placeholders = {
   prazoArea: "[prazo e área de entrega]",
   pagamento: "[formas de pagamento]",
   areaPorLoja: "[área de entrega por loja]",
-  prazo: "[prazo de entrega]",
+  prazo: "No mesmo dia, dentro da área de entrega de cada loja.",
 };
 
 export const fotos = {
@@ -64,9 +64,14 @@ export const partners = [
 ];
 
 export const testimonials = [
-  { text: "[depoimento]", name: "[nome]", store: "[loja]", avatar: "" },
-  { text: "[depoimento]", name: "[nome]", store: "[loja]", avatar: "" },
-  { text: "[depoimento]", name: "[nome]", store: "[loja]", avatar: "" },
+  { text: "Muito legal, bem localizado, funcionários, com excelente atendimento!!", name: "Jorge Cobucci", store: "Granja Viana" },
+  { text: "Ótima variedade de excelentes produtos! Atendentes muito atenciosas!", name: "Lélia Oliva", store: "Granja Viana" },
+  { text: "Estive hj na unidade de Alphaville e fui atendida por umas meninas super simpáticas, grandes na simpatia e pequenas no tamanho, uns amores! Voltarei sempre! 😍", name: "Anderson Dias", store: "Alphaville" },
+  { text: "Ótimo atendimento e variedade de produtos. Fui atendida pela Laís, muito educada e prestativa. Me explicou sobre os produtos e me auxiliou na compra. Muito bom quando chegamos no lugar e somos tratadas bem, voltarei outras vezes. Parabéns pelo ambiente e pelos profissionais.", name: "Bruna Lorrayne", store: "Alphaville" },
+  { text: "Loja com muita variedade de produtos! Qualidade excelente!", name: "Natália Barbieri", store: "Vila Leopoldina" },
+  { text: "Lugar incrível! Produtos de qualidade, funcionárias simpáticas e educadas, que é o diferencial.", name: "Andressa Carolina de Souza", store: "Vila Leopoldina" },
+  { text: "Ótimo local, produtos de qualidade, recomendo. Ótimo atendimento, funcionárias simpáticas e educadas.", name: "Adailton Coelho", store: "Chácara Klabin" },
+  { text: "Ótima loja, super completa. Tem muitos itens a granel e os atendentes são bem atenciosos. Voltarei a fazer compras com certeza!", name: "Fabio Macedo", store: "Chácara Klabin" },
 ];
 
 export const waLink = (n: string) => `https://wa.me/${n}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
