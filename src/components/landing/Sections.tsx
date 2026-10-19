@@ -339,8 +339,7 @@ export function ComoReceber() {
             </Reveal>
           ))}
         </div>
-        <Reveal className="mt-10 flex flex-col items-start justify-between gap-6 border-t border-border pt-8 md:flex-row md:items-center">
-          <p className="text-muted-foreground"><span className="font-semibold text-foreground">Pagamento:</span> {placeholders.pagamento}</p>
+        <Reveal className="mt-10 border-t border-border pt-8">
           <Cta>Quero receber em casa</Cta>
         </Reveal>
       </div>
