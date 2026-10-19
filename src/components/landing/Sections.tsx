@@ -77,9 +77,9 @@ export function Video() {
           </div>
         </Reveal>
         <Reveal className="mx-auto mt-14 max-w-3xl text-center text-lg text-muted-foreground">
-          <p>Há dez anos, famílias, atletas e quem leva a saúde a sério escolhem a Cerealli para abastecer a casa com produto de verdade. Castanhas frescas, suplementos das marcas referência do mercado e opções sem glúten, sem lactose e low carb, num só lugar.</p>
-          <p className="mt-5">Nossas atendentes te ajudam a escolher o que faz sentido para o seu objetivo, e o pedido chega na sua porta.</p>
-          <Cta className="mt-10">Quero falar com a atendente</Cta>
+          <p>Há dez anos, a Cerealli abastece a casa de famílias, atletas e de quem prioriza a saúde. Castanhas frescas, suplementos das marcas de referência no mercado e opções sem glúten, sem lactose e low carb, em um só lugar.</p>
+          <p className="mt-5">Nossas atendentes ajudam você a escolher o que faz sentido para o seu objetivo, e o pedido chega até a sua casa.</p>
+          <Cta className="mt-10">Quero falar com uma atendente</Cta>
         </Reveal>
       </div>
     </section>
@@ -141,14 +141,14 @@ export function Cuidado() {
 export function ParaQuem() {
   const cards = [
     { t: "Para quem treina", d: "Whey, creatina, pré-treino e snacks proteicos com reposição rápida, sem esperar dias pela entrega e sem dúvida sobre a procedência.", img: fotos.treina, alt: "Cliente escolhendo whey protein na Cerealli" },
-    { t: "Para quem cuida da casa inteira", d: "Castanhas, granola, mel, lanche saudável das crianças e o suplemento da família, resolvidos numa única conversa.", img: fotos.familia, alt: "Cliente escolhendo produtos na área de refrigerados da Cerealli" },
+    { t: "Para quem cuida da casa inteira", d: "Castanhas, granola, mel, lanche saudável das crianças e o suplemento da família, resolvidos em uma única conversa.", img: fotos.familia, alt: "Cliente escolhendo produtos na área de refrigerados da Cerealli" },
     { t: "Para quem investe em longevidade", d: "As marcas premium de suplementação e orientação séria para quem quer viver mais e melhor.", img: fotos.longevidade, alt: "Mulher madura conferindo um suplemento em casa, imagem ilustrativa gerada por IA" },
   ];
   return (
     <section className={`grain glow-bl relative overflow-hidden ${section}`}>
       <Leaf className="-right-8 top-16 w-28 rotate-45 opacity-70 blur-[4px]" />
       <div className={`${wrap} relative z-10`}>
-        <Reveal><h2 className={`${h2} max-w-4xl`}>Para quem não abre mão de cuidar da saúde e não quer <em className="kw text-primary-glow">perder tempo</em> com isso</h2></Reveal>
+        <Reveal><h2 className={`${h2} max-w-4xl`}>Para quem cuida da saúde sem abrir mão da <em className="kw text-primary-glow">praticidade</em></h2></Reveal>
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           {cards.map((c, i) => (
             <Reveal key={c.t} delay={i * 100} className="group overflow-hidden rounded-3xl border border-border bg-card transition-all duration-300 hover:-translate-y-1.5 hover:border-primary">
@@ -186,7 +186,7 @@ export function Linhas() {
         <div className="mt-14 grid gap-6 lg:grid-cols-[1.3fr_1fr]">
           <Reveal className="h-full"><Card main title="GRANEL" img={fotos.granel} alt="Parede de dispensers e potes de granel na loja" d="O coração da Cerealli. Você leva a quantidade que quiser e pode provar antes." items={["Castanhas e oleaginosas", "Frutas desidratadas", "Cereais, grãos e farinhas", "Granolas e mix", "Chás"]} /></Reveal>
           <div className="grid gap-6">
-            <Reveal delay={100}><Card title="SUPLEMENTAÇÃO" img={fotos.suplementacao} alt="Suplementos e produtos saudáveis nas prateleiras da Cerealli" d="As marcas que são referência no mercado, com orientação de quem entende." items={["Whey protein", "Creatina", "Ômegas", "Vitaminas e minerais", "Pré-treino", "Géis, repositores e isotônicos para endurance"]} /></Reveal>
+            <Reveal delay={100}><Card title="SUPLEMENTAÇÃO" img={fotos.suplementacao} alt="Suplementos e produtos saudáveis nas prateleiras da Cerealli" d="As marcas que são referência no mercado, com orientação especializada." items={["Whey protein", "Creatina", "Ômegas", "Vitaminas e minerais", "Pré-treino", "Géis, repositores e isotônicos para endurance"]} /></Reveal>
             <Reveal delay={200}><Card title="MERCADO E REFRIGERADOS" img={fotos.mercado} alt="Consultora selecionando uma bebida proteica na geladeira da Cerealli" d="Para completar a despensa sem precisar de outra parada." items={["Sem glúten, sem lactose e sem açúcar", "Low carb e diet", "Opções veganas", "Snacks saudáveis para as crianças", "Doces fit"]} /></Reveal>
           </div>
         </div>
@@ -250,7 +250,7 @@ export function ComoFunciona() {
             ))}
           </ol>
           <Reveal className="mt-12 rounded-3xl border border-line p-7">
-            <p className="text-lg"><span className="font-semibold text-primary-glow">Resultado:</span> a despensa abastecida com produto que você confia, sem fila, sem rótulo enganoso e sem perder o seu tempo.</p>
+            <p className="text-lg"><span className="font-semibold text-primary-glow">Resultado:</span> a despensa abastecida com produtos em que você confia, sem filas e sem perder tempo.</p>
           </Reveal>
           <Reveal><Cta className="mt-10">Quero fazer meu pedido agora</Cta></Reveal>
         </div>
@@ -271,7 +271,7 @@ export function Clube() {
         <Reveal><h2 className={`${h2} max-w-3xl`}>Faça parte do <em className="kw text-primary-glow">Clube Cerealli</em></h2></Reveal>
         <Reveal delay={100}>
           <p className="mt-7 max-w-2xl text-lg text-muted-foreground">
-            Quem é do Clube tem descontos exclusivos e benefícios a cada compra. O cadastro é rápido: a atendente faz pelo WhatsApp, com o seu CPF, e te envia o link do aplicativo.
+            Quem é do Clube tem descontos exclusivos e benefícios a cada compra. O cadastro é rápido: a atendente faz pelo WhatsApp, com o seu CPF, e envia o link do aplicativo.
           </p>
         </Reveal>
         <Reveal delay={200}>
@@ -320,7 +320,7 @@ export function Depoimentos() {
 export function ComoReceber() {
   const c = [
     { i: Icon.moto, t: "Delivery", d: "Seu pedido separado pelas nossas atendentes e entregue em casa no mesmo dia.", img: fotos.delivery, alt: "Entrega de uma sacola de produtos na porta de casa, imagem ilustrativa gerada por IA" },
-    { i: Icon.bag, t: "Retirada na loja", d: "Peça pelo WhatsApp e passe só para buscar.", img: fotos.retirada, alt: "Entrada da Cerealli com uma cliente e uma atendente" },
+    { i: Icon.bag, t: "Retirada na loja", d: "Faça o pedido pelo WhatsApp e retire na unidade quando for mais conveniente.", img: fotos.retirada, alt: "Entrada da Cerealli com uma cliente e uma atendente" },
     { i: Icon.store, t: "Visita à loja", d: "Venha conhecer, provar o granel e conversar pessoalmente com as nossas atendentes.", img: fotos.fachada, alt: "Fachada da Cerealli Natural Market" },
   ];
   return (
@@ -389,7 +389,7 @@ export function Faq() {
     ["Em quanto tempo o pedido chega?", placeholders.prazo],
     ["Posso provar os produtos do granel?", "Pode. Na loja, é só pedir para uma atendente e provar o que tiver vontade antes de levar."],
     ["Vocês têm produtos sem glúten, sem lactose e veganos?", "Sim. Temos uma seleção de produtos sem glúten, sem lactose e veganos, além de opções low carb, diet e sem açúcar."],
-    ["Por que o granel da Cerealli é diferente?", "Porque cada produto passa por inspeção no recebimento, congelamento de 72 horas no caso de cereais e castanhas, estoque climatizado, potes menores para reposição frequente e conferência diária antes de a loja abrir."],
+    ["Por que o granel da Cerealli é diferente?", "Porque cada produto é acompanhado de perto, da chegada à loja até o pote, para chegar até você com frescor e qualidade."],
     ["Quais marcas de suplemento vocês trabalham?", "As marcas que são referência no mercado, nacionais e importadas. Pergunte pela sua marca à atendente."],
   ];
   const [open, setOpen] = useState<number | null>(0);
