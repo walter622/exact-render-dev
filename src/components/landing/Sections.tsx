@@ -123,7 +123,7 @@ export function Cuidado() {
           <Reveal><img src={fotos.potes} alt="Potes de granel com identificação dos produtos na Cerealli" width={1616} height={1080} loading="lazy" className="aspect-[3/2] w-full rounded-2xl object-cover" /></Reveal>
         </div>
         <Reveal className="mt-16 grid overflow-hidden rounded-[1.75rem] border border-border bg-card text-card-foreground md:grid-cols-2">
-          <img src={fotos.consultora} alt="Consultora Cerealli orientando uma cliente junto ao granel" width={1616} height={1080} loading="lazy" className="h-full min-h-72 w-full object-cover" />
+          <img src={fotos.consultora} alt="Atendente Cerealli orientando uma cliente junto ao granel" width={1616} height={1080} loading="lazy" className="h-full min-h-72 w-full object-cover" />
           <div className="p-8 md:p-14">
             <h3 className="text-3xl font-semibold md:text-4xl">E no <em className="kw text-primary-glow">atendimento</em>:</h3>
             <ul className="mt-8 space-y-6 text-lg text-muted-foreground">
@@ -320,7 +320,7 @@ export function Depoimentos() {
 export function ComoReceber() {
   const c = [
     { i: Icon.moto, t: "Delivery", d: "Seu pedido separado pelas nossas atendentes e entregue em casa no mesmo dia.", img: fotos.delivery, alt: "Entrega de uma sacola de produtos na porta de casa, imagem ilustrativa gerada por IA" },
-    { i: Icon.bag, t: "Retirada na loja", d: "Peça pelo WhatsApp e passe só para buscar.", img: fotos.retirada, alt: "Entrada da Cerealli com uma cliente e uma consultora" },
+    { i: Icon.bag, t: "Retirada na loja", d: "Peça pelo WhatsApp e passe só para buscar.", img: fotos.retirada, alt: "Entrada da Cerealli com uma cliente e uma atendente" },
     { i: Icon.store, t: "Visita à loja", d: "Venha conhecer, provar o granel e conversar pessoalmente com as nossas atendentes.", img: fotos.fachada, alt: "Fachada da Cerealli Natural Market" },
   ];
   return (
