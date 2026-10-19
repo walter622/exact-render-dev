@@ -32,16 +32,16 @@ export function Hero() {
       <div className={`${wrap} grid items-center gap-14 lg:grid-cols-[1.05fr_1fr]`}>
         <Reveal className="relative z-10">
           <h1 className="text-[2.6rem] font-semibold leading-[1.05] tracking-tight md:text-[4.5rem]">
-            Cuidado que dá pra <em className="kw text-primary-glow">provar</em>.
+            O natural levado a <em className="kw text-primary-glow">sério</em>.
           </h1>
           <p className="mt-7 max-w-xl text-lg text-muted-foreground">
-            Granel, suplementação e alimentação saudável escolhidos com o rigor de uma cozinha profissional e entregues na sua casa. Fale com uma consultora Cerealli e monte seu pedido pelo WhatsApp.
+            Granel, suplementação e alimentação saudável selecionados com critério e entregues na sua casa. Fale com uma atendente Cerealli e monte seu pedido pelo WhatsApp.
           </p>
           <Cta className="mt-10">Quero fazer meu pedido</Cta>
           <ul className="mt-12 flex flex-wrap gap-x-8 gap-y-4 border-t border-border pt-8 text-sm text-foreground">
             <li className="flex items-center gap-3"><IconBox>{Icon.check}</IconBox>10 anos</li>
             <li className="flex items-center gap-3"><IconBox>{Icon.store}</IconBox>4 lojas em São Paulo</li>
-            <li className="flex items-center gap-3"><IconBox>{Icon.hands}</IconBox>Atendimento por consultoras</li>
+            <li className="flex items-center gap-3"><IconBox>{Icon.hands}</IconBox>Atendimento especializado</li>
           </ul>
         </Reveal>
         <Reveal delay={150} className="relative z-10">
@@ -78,7 +78,7 @@ export function Video() {
         </Reveal>
         <Reveal className="mx-auto mt-14 max-w-3xl text-center text-lg text-muted-foreground">
           <p>Há dez anos, famílias, atletas e quem leva a saúde a sério escolhem a Cerealli para abastecer a casa com produto de verdade. Castanhas frescas, suplementos das marcas referência do mercado e opções sem glúten, sem lactose e low carb, num só lugar.</p>
-          <p className="mt-5">Nossas consultoras te ajudam a escolher o que faz sentido para o seu objetivo, e o pedido chega na sua porta.</p>
+          <p className="mt-5">Nossas atendentes te ajudam a escolher o que faz sentido para o seu objetivo, e o pedido chega na sua porta.</p>
           <Cta className="mt-10">Quero falar com a atendente</Cta>
         </Reveal>
       </div>
@@ -87,10 +87,10 @@ export function Video() {
 }
 
 const steps = [
-  { i: Icon.ret, t: "Só fica o que está no nosso padrão. Produto que não alcança a qualidade Cerealli volta para o fornecedor." },
-  { i: Icon.snow, t: "Cereais e castanhas passam 72 horas no congelamento antes de chegar à loja, um cuidado a mais para você levar o produto íntegro para casa." },
-  { i: Icon.thermo, t: "Nosso estoque é climatizado, na temperatura certa para manter o sabor e a crocância de cada produto." },
-  { i: Icon.jar, t: "Potes menores, para o produto estar sempre fresco. E cada pote traz data, lote e fornecedor, para você saber exatamente o que está levando." },
+  { i: Icon.ret, t: "Cada lote é avaliado na chegada. O que não atende ao nosso padrão de qualidade é devolvido ao fornecedor." },
+  { i: Icon.snow, t: "Cereais e castanhas passam por 72 horas de congelamento antes do armazenamento, o que preserva a integridade do produto." },
+  { i: Icon.thermo, t: "O estoque é climatizado para conservar o sabor, o aroma e a crocância de cada item." },
+  { i: Icon.jar, t: "Potes menores garantem reposição frequente e produto sempre fresco. Cada um é identificado com data, lote e fornecedor." },
 ] as { i: React.ReactNode; t: string; big?: boolean }[];
 
 function Step({ n, s }: { n: number; s: (typeof steps)[number] }) {
@@ -112,8 +112,8 @@ export function Cuidado() {
     <section className={`bg-cream text-ink ${section}`}>
       <div className={wrap}>
         <Reveal className="max-w-3xl">
-          <h2 className={h2}>O que acontece com cada produto antes de ele chegar à sua <em className="kw text-primary">mesa</em></h2>
-          <p className="mt-6 text-lg text-ink-soft">No granel, o produto vem da natureza, sem embalagem de fábrica para esconder nada. Por isso, a Cerealli criou um processo próprio de qualidade, que acompanha cada item do recebimento até o pote.</p>
+          <h2 className={h2}>Cuidado em cada etapa, até chegar à sua <em className="kw text-primary">mesa</em></h2>
+          <p className="mt-6 text-lg text-ink-soft">No granel, a qualidade depende de quem cuida do produto. Por isso, cada item da Cerealli é acompanhado de perto, da chegada à loja até o pote.</p>
         </Reveal>
         <ol aria-label="Cuidados com cada produto" className="mt-12 grid gap-x-12 md:mt-16 md:grid-cols-2 lg:gap-x-20">
           {steps.map((s, i) => <Step key={s.t} n={i + 1} s={s} />)}
@@ -127,8 +127,8 @@ export function Cuidado() {
           <div className="p-8 md:p-14">
             <h3 className="text-3xl font-semibold md:text-4xl">E no <em className="kw text-primary-glow">atendimento</em>:</h3>
             <ul className="mt-8 space-y-6 text-lg text-muted-foreground">
-              <li className="flex gap-4"><IconBox>{Icon.check}</IconBox>Consultoras treinadas pela Cerealli e pelos próprios fabricantes</li>
-              <li className="flex gap-4"><IconBox>{Icon.heart}</IconBox>Orientação para escolher o produto certo para o seu objetivo, sempre ao lado do seu nutricionista ou médico, nunca no lugar deles</li>
+              <li className="flex gap-4"><IconBox>{Icon.check}</IconBox>Atendentes treinadas pela Cerealli e pelos próprios fabricantes</li>
+              <li className="flex gap-4"><IconBox>{Icon.heart}</IconBox>Orientação para escolher o produto certo para o seu objetivo</li>
             </ul>
             <Cta className="mt-10">Quero receber em casa</Cta>
           </div>
@@ -230,8 +230,8 @@ export function Parceiros() {
 
 export function ComoFunciona() {
   const s = [
-    ["Fale com uma consultora.", "Clique no botão, escolha a loja mais perto de você e conte o que precisa."],
-    ["Monte seu pedido com orientação.", "A consultora tira suas dúvidas, indica o que combina com o seu objetivo e separa cada item com o mesmo cuidado da loja."],
+    ["Fale com uma atendente.", "Clique no botão, escolha a loja mais perto de você e conte o que precisa."],
+    ["Monte seu pedido com orientação.", "A atendente tira suas dúvidas, indica o que combina com o seu objetivo e separa cada item com o mesmo cuidado da loja."],
     ["Receba em casa.", "O pedido sai da loja e chega até você."],
   ];
   return (
@@ -319,9 +319,9 @@ export function Depoimentos() {
 
 export function ComoReceber() {
   const c = [
-    { i: Icon.moto, t: "Delivery", d: `Seu pedido entregue em casa, separado pelas nossas consultoras. ${placeholders.prazoArea}`, img: fotos.delivery, alt: "Entrega de uma sacola de produtos na porta de casa, imagem ilustrativa gerada por IA" },
+    { i: Icon.moto, t: "Delivery", d: "Seu pedido separado pelas nossas atendentes e entregue em casa no mesmo dia.", img: fotos.delivery, alt: "Entrega de uma sacola de produtos na porta de casa, imagem ilustrativa gerada por IA" },
     { i: Icon.bag, t: "Retirada na loja", d: "Peça pelo WhatsApp e passe só para buscar.", img: fotos.retirada, alt: "Entrada da Cerealli com uma cliente e uma consultora" },
-    { i: Icon.store, t: "Visita à loja", d: "Venha conhecer, provar o granel e conversar pessoalmente com as consultoras.", img: fotos.fachada, alt: "Fachada da Cerealli Natural Market" },
+    { i: Icon.store, t: "Visita à loja", d: "Venha conhecer, provar o granel e conversar pessoalmente com as nossas atendentes.", img: fotos.fachada, alt: "Fachada da Cerealli Natural Market" },
   ];
   return (
     <section className={`grain ${section}`}>
@@ -357,7 +357,7 @@ export function Lojas() {
         <Leaf className="-right-8 bottom-10 w-24 rotate-[150deg] opacity-70 blur-[5px] md:w-32" />
         <div className={`${wrap} relative z-10`}>
           <Reveal className="mx-auto max-w-3xl text-center">
-            <h2 className={h2}>Fale agora com uma consultora da Cerealli mais <em className="kw text-primary-glow">perto de você</em></h2>
+            <h2 className={h2}>Fale agora com uma atendente da Cerealli mais <em className="kw text-primary-glow">perto de você</em></h2>
             <p className="mt-5 text-lg text-muted-foreground">Toque na sua unidade e o WhatsApp abre direto com a equipe da loja.</p>
           </Reveal>
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -385,13 +385,12 @@ export function Lojas() {
 
 export function Faq() {
   const items = [
-    ["Vocês entregam no meu endereço?", `Cada loja atende a sua região. Ao tocar na unidade mais próxima, a consultora confirma a entrega no seu endereço. ${placeholders.areaPorLoja}`],
+    ["Vocês entregam no meu endereço?", "Cada loja atende a sua região. Ao tocar na unidade mais próxima, a atendente confirma a entrega no seu endereço."],
     ["Em quanto tempo o pedido chega?", placeholders.prazo],
-    ["Posso provar os produtos do granel?", "Pode. Na loja, é só pedir para uma consultora e provar o que tiver vontade antes de levar."],
-    ["As consultoras substituem um nutricionista ou médico?", "Não. Elas orientam sobre produtos, combinações e formas de consumo. Para dieta, dosagem e tratamento, a referência é sempre o seu profissional de saúde."],
-    ["Vocês têm produtos sem glúten, sem lactose e veganos?", "Temos uma linha completa de produtos para restrições alimentares, além de opções low carb, diet e sem açúcar."],
+    ["Posso provar os produtos do granel?", "Pode. Na loja, é só pedir para uma atendente e provar o que tiver vontade antes de levar."],
+    ["Vocês têm produtos sem glúten, sem lactose e veganos?", "Sim. Temos uma seleção de produtos sem glúten, sem lactose e veganos, além de opções low carb, diet e sem açúcar."],
     ["Por que o granel da Cerealli é diferente?", "Porque cada produto passa por inspeção no recebimento, congelamento de 72 horas no caso de cereais e castanhas, estoque climatizado, potes menores para reposição frequente e conferência diária antes de a loja abrir."],
-    ["Quais marcas de suplemento vocês trabalham?", "As marcas que são referência no mercado, nacionais e importadas. Pergunte pela sua marca à consultora."],
+    ["Quais marcas de suplemento vocês trabalham?", "As marcas que são referência no mercado, nacionais e importadas. Pergunte pela sua marca à atendente."],
   ];
   const [open, setOpen] = useState<number | null>(0);
   return (
@@ -427,8 +426,9 @@ export function Footer() {
             <span key={s.id}>{i > 0 && <span className="mr-3" aria-hidden>·</span>}<a href={`https://www.instagram.com/${s.instagram}`} target="_blank" rel="noopener noreferrer" className="hover:text-primary-glow">{s.name}</a></span>
           ))}
         </nav>
-        <p className="mt-12 text-4xl font-semibold md:text-5xl">Cuidado que dá pra <em className="kw text-primary-glow">provar</em>.</p>
+        <p className="mt-12 text-4xl font-semibold md:text-5xl">O natural levado a <em className="kw text-primary-glow">sério</em>.</p>
         <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" aria-label="Instagram da Cerealli" className="mt-10 flex h-12 w-12 items-center justify-center rounded-full border border-border text-primary-glow transition-colors hover:border-primary"><span className="h-6 w-6 [&>svg]:h-full [&>svg]:w-full">{Icon.insta}</span></a>
+        <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="mt-3 text-sm text-primary-glow hover:underline">@cereallinaturalmarket</a>
         <p className="mt-10 text-sm text-muted-foreground">© 2026 – Todos os direitos reservados.</p>
       </div>
     </footer>
